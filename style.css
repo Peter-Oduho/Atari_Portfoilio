@@ -1,0 +1,166 @@
+.circle {
+  width: 200px;        /* set desired size */
+  height: 200px;
+  border-radius: 50%;  /* makes the div circular */
+  overflow: hidden;    /* hides the overflow to crop the image */
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ensures image fills the circle */
+}
+/* Contact */
+#contact {
+  background: rgba(0,0,0,0.5);
+  max-width: 600px;
+  margin: 0 auto 100px auto;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+#contact h2 {
+  text-align: center;
+  color: #00bcd4;
+  margin-bottom: 25px;
+  font-size: 2.8rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+form input, form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+  outline: 2px solid #00bcd4;
+}
+
+button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+/* ============ Variables ============ */
+:root {
+  --bg-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1650&q=80');
+  --accent: 209 85% 57%;
+  --glass: rgba(255,255,255,0.09);
+  --glass-2: rgba(255,255,255,0.06);
+  --text: rgba(255,255,255,0.96);
+  --muted: rgba(255,255,255,0.75);
+  --radius: 14px;
+  --max-width: 1100px;
+  font-family: 'Inter', system-ui;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; }
+
+img { max-width:100%; display:block; }
+
+/* ============ Hero Section ============ */
+.hero {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45)), var(--bg-image);
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  padding:48px 20px;
+}
+
+.card {
+  max-width:var(--max-width);
+  width:100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border-radius: calc(var(--radius) + 6px);
+  padding:36px;
+  backdrop-filter: blur(8px) saturate(120%);
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px;
+  box-shadow:0 8px 40px rgba(2,6,23,0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding:28px;
+  }
+}
+
+/* ============ Other Components ============ */
+.brand { display:flex; gap:14px; align-items:center; }
+
+.logo {
+  width:56px;height:56px;
+  border-radius:12px;
+  background:linear-gradient(135deg, hsla(var(--accent)/0.92), hsla(var(--accent)/0.62));
+  display:grid;place-items:center;
+  color:white;font-weight:800;font-size:20px;
+}
+
+h1 { font-size:2.4rem; }
+
+.btn { padding:12px 18px; border-radius:12px; cursor:pointer; border:0; }
+
+.btn-primary {
+  background:linear-gradient(90deg, hsla(var(--accent)/0.95), rgba(120,120,255,0.9));
+  color:white;
+}
+
+.btn-ghost {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+/* Portfolio Grid */
+.more { padding:48px 20px; background:#f3f3f3; }
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+}
+
+@media(max-width:900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card-light {
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(12,18,35,0.06);
+}
+
+/* Animation */
+.reveal { opacity:0; transform:translateY(8px); transition:0.5s; }
+.reveal.visible { opacity:1; transform:none; }

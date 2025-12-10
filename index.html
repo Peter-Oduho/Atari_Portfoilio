@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="style.css" />
+
+  <meta name="description" content="A modern one-file website with a full-screen background image, overlay, responsive layout and small JS interactions.">
+</head>
+
+<body>
+  <main class="hero">
+    <section class="card reveal" id="mainCard">
+      <div>
+        <div class="brand">
+          <div class="logo">#CA</div>
+          <div>
+            <div class="muted">Chocha</div>
+            <div style="font-weight:700">Atari</div>
+          </div>
+        </div>
+
+        <h1>Web-Developer, Graphic Design and Media Production!!!</h1>
+        <p class="lead">
+          Hello, I am Chocha Atari, a motivated Form 4 leaver with growing experience in Web-developer, and graphic design at maggie school as well i'm also exprience media production at turkana capteria. I enjoy creating digital solutions that blend creativity and technology, whether I’m designing visuals, editing media content, or experimenting with coding and interactive projects. My hands-on practice in graphic design has strengthened my sense of layout, color, and branding, while my media production experience has taught me how to communicate stories effectively through video and sound. As I continue to develop my skills, I am committed to learning, improving, and building a strong foundation for a future career.
+        </p>
+
+        <div class="cta">
+          <button class="btn btn-primary" id="primaryCta">Get started</button>
+          <button class="btn btn-ghost" id="secondaryCta">Learn more</button>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h3>Quick preview</h3>
+        <div class="list">
+          <div class="item">
+            <div class="avatar">#CA</div>
+            <div>
+              <div style="font-weight:600">Chocha Atari</div>
+              <div class="muted" style="font-size:0.88rem">
+                Developer, Graphic Design and Media Production.
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <small class="muted">Theme</small>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button class="btn" id="lightBtn">Light</button>
+              <button class="btn" id="darkBtn">Dark</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <section class="more">
+    <h1>Skills</h1>
+    <div class="grid">
+      <div class="card-light reveal">
+        <h4>Web-Developer</h4>
+        <p>A dedicated software developer spends his days transforming ideas into functional, elegant code...</p>
+        <img src="images (2).jpg" alt="Developer">
+      </div>
+
+      <div class="card-light reveal">
+        <h4>Graphic Design</h4>
+        <p>A graphic designer blends creativity and visual storytelling...</p>
+        <img src="creative-workspace-chaos-stockcake.jpg" alt="Graphic Design">
+      </div>
+
+      <div class="card-light reveal">
+        <h4>Media Production</h4>
+        <p>Media production brings ideas to life through the creation of videos, audio, and digital content...</p>
+        <img src="video-development.jpg" alt="Media Production">
+      </div>
+    </div>
+
+    <h1>Contact Me</h1>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <form onsubmit="submitForm(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="circle">
+    <img src="430477403_253654987794388_6808273628854070969_n - Copy.jpg" alt="" srcset="">
+</div> 
+    </section>
+  </section>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
