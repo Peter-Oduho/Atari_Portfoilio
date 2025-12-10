@@ -59,9 +59,23 @@
               <button class="btn" id="darkBtn">Light</button>
             </div>
           </div>
-          <div class="circle">
-    <img src="430477403_253654987794388_6808273628854070969_n - Copy.jpg" alt="" srcset="">
-</div> 
+          <!-- Your original markup (I added loading + role + tabindex for accessibility) -->
+<div class="circle" role="button" tabindex="0" aria-label="Open image preview">
+  <img src="430477403_253654987794388_6808273628854070969_n - Copy.jpg"
+       alt="Photo description"
+       loading="lazy">
+  <!-- optional caption element -->
+  <div class="caption" aria-hidden="true">View</div>
+</div>
+
+<!-- Modal preview. Initially hidden; JS toggles the "open" class -->
+<div class="img-modal" id="imgModal" aria-hidden="true">
+  <button class="close-btn" id="modalClose" aria-label="Close preview">✕</button>
+  <div class="modal-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+    <img id="modalImage" src="" alt="">
+  </div>
+</div>
+
         </div>
       </aside>
     </section>

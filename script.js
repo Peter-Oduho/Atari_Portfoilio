@@ -1,3 +1,62 @@
+// JavaScript to power click / keyboard / modal features
+  (function () {
+    const circle = document.querySelector('.circle');
+    const img = circle.querySelector('img');
+    const modal = document.getElementById('imgModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    // Open modal function
+    function openModal() {
+      modalImage.src = img.src;                 // use same image (could use a hi-res src)
+      modalImage.alt = img.alt || 'Preview image';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      // put keyboard focus on close button for accessibility
+      setTimeout(() => modalClose.focus(), 50);
+      // prevent page scroll while modal is open
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+      document.documentElement.style.overflow = '';
+      // return focus to the thumbnail
+      circle.focus();
+    }
+
+    // Click or Enter/Space to open
+    circle.addEventListener('click', openModal);
+    circle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    // Close on overlay click (but not when clicking the inner image)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target === modalClose) closeModal();
+    });
+
+    // Close on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    // Optional: close when the image finishes loading if you'd like to auto-close (usually not)
+    modalImage.addEventListener('error', () => {
+      // If the modal image fails, close modal and optionally show a message
+      closeModal();
+      console.warn('Modal image failed to load.');
+    });
+
+    // Prevent accidental drag of the image on mobile
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+  })();
 document.addEventListener('DOMContentLoaded', function () {
 
   // Reveal Animation
