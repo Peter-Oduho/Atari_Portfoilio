@@ -1,3 +1,4 @@
+
 // JavaScript to power click / keyboard / modal features
   (function () {
     const circle = document.querySelector('.circle');
